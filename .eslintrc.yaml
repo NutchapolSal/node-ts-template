@@ -1,0 +1,60 @@
+parser: '@typescript-eslint/parser'
+env:
+  es2022: true
+  node: true
+extends:
+  - eslint:recommended
+  - plugin:import/recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-requiring-type-checking
+  - prettier
+overrides: []
+plugins:
+  - '@typescript-eslint'
+parserOptions:
+  project:
+    - ./tsconfig.json
+  ecmaVersion: 13
+  sourceType: module
+rules:
+  # rule modifications
+  no-console: off
+  no-var: error
+  # things that will make you go wtf
+  curly: [error, all]
+  default-case-last: error
+  no-await-in-loop: error
+  no-floating-decimal: error
+  no-lonely-if: error
+  no-return-assign: error
+  no-self-compare: error
+  no-sequences: error
+  no-useless-concat: error
+  no-useless-return: error
+  prefer-const: error
+  '@typescript-eslint/no-shadow': [error, { allow: [err, resolve, reject] }]
+  '@typescript-eslint/no-throw-literal': error
+  '@typescript-eslint/no-use-before-define': error
+
+  # less wtf stuff
+  arrow-body-style: warn
+  no-else-return: warn
+  '@typescript-eslint/no-unused-vars': warn
+  require-unicode-regexp: error
+  yoda: [error, never, { onlyEquality: true }]
+  # node's new dependency resolver won't guess extensions
+  import/extensions: [error, ignorePackages]
+  # style guide
+  object-shorthand: warn
+  prefer-template: warn
+  quotes: [warn, single, { avoidEscape: true, allowTemplateLiterals: false }]
+  spaced-comment: warn
+  # prettier moment
+  line-comment-position: warn
+  # imports fuckery
+  import/no-useless-path-segments: warn
+  import/order: [warn, { alphabetize: { order: asc } }]
+  '@typescript-eslint/restrict-template-expressions':
+    [error, { allowNumber: true, allowBoolean: true }]
+  '@typescript-eslint/consistent-type-definitions': warn
+  '@typescript-eslint/prefer-string-starts-ends-with': warn

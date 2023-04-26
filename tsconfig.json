@@ -1,0 +1,34 @@
+{
+  // "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
+  "exclude": ["node_modules", "dist", "state", "bin", "coverage"],
+  "compilerOptions": {
+    "lib": ["es2022"],
+    "module": "es2022",
+    "target": "es2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    // "moduleResolution": "node",
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    // "importsNotUsedAsValues": "error",
+    "checkJs": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "outDir": "dist",
+    "moduleResolution": "node16"
+  },
+  "ts-node": {
+    "esm": true,
+    "swc": true
+  }
+}
